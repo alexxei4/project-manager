@@ -1,9 +1,7 @@
-Project Manager list locally made on Ubuntu 
-For the Frontend it uses : Vue.js 3 (Composition API + TypeScript), Vite, Axios, Vue Router, Pinia, CSS3
-For the Backend it Uses: Laravel 10, PHP 8.2, Laravel Sanctum, RESTful API, JSON:API Resources
-The Database is :PostgreSQL 15, Eloquent ORM, Database Migrations
-DevOps Tools Used: Docker & Docker Compose, Nginx, Multi-container Architecture, Volume Mounting
-
-And It was made in my Ubuntu Linux VM to hone my Linux skills
-
-In essence this is a project manager CRUD tool 
+- **Project Manager** - Locally made on Ubuntu VM
+- **Frontend**: Vue.js 3 (Composition API + TypeScript), Vite, Axios, Vue Router, Pinia, CSS3
+- **Backend**: Laravel 10, PHP 8.2, Laravel Sanctum, RESTful API, JSON:API Resources
+- **Database**: PostgreSQL 15, Eloquent ORM, Database Migrations
+- **DevOps**: Docker & Docker Compose, Nginx, Multi-container Architecture, Volume Mounting
+- **Environment**: Built on Ubuntu Linux VM to sharpen system administration skills
+- **Functionality**: Full CRUD project manager application
