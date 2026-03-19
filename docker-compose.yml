@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  # PostgreSQL Database
+
   postgres:
     image: postgres:15
     container_name: project_postgres
@@ -17,7 +17,6 @@ services:
     networks:
       - project-network
 
-  # Nginx Web Server
   nginx:
     image: nginx:alpine
     container_name: project_nginx
@@ -32,10 +31,10 @@ services:
     networks:
       - project-network
 
-  # PHP-FPM with Laravel
+
   php:
     build:
-      context: ./docker/php  # This is correct - relative path from compose file
+      context: ./docker/php  
       dockerfile: Dockerfile
     container_name: project_php
     restart: unless-stopped
@@ -46,7 +45,7 @@ services:
     networks:
       - project-network
 
-  # PgAdmin (optional)
+
   pgadmin:
     image: dpage/pgadmin4
     container_name: project_pgadmin
