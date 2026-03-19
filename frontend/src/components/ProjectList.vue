@@ -2,12 +2,12 @@
   <div class="container">
     <h1>Project Manager</h1>
     
-    <!-- Add Project Button -->
+
     <button @click="openCreateModal" class="btn btn-primary btn-large">
       + New Project
     </button>
 
-    <!-- Projects List -->
+
     <div v-if="loading" class="loading">Loading...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
     <div v-else>
@@ -27,7 +27,7 @@
         </div>
         <p class="description">{{ project.attributes.description || 'No description' }}</p>
         
-        <!-- Tasks Section -->
+ 
         <div class="tasks-section">
           <h4>Tasks ({{ project.relationships?.tasks?.data?.length || 0 }})</h4>
           <div v-if="project.relationships?.tasks?.data?.length" class="task-list">
@@ -50,7 +50,7 @@
           </div>
           <div v-else class="no-tasks">No tasks yet</div>
           
-          <!-- Add Task Form -->
+
           <div class="add-task">
             <input 
               v-model="newTaskTitle[project.id]" 
@@ -71,7 +71,6 @@
       </div>
     </div>
 
-    <!-- Edit/Create Modal -->
     <EditProjectModal
       :show="showModal"
       :project="editingProject"
@@ -125,10 +124,8 @@ function closeModal() {
 async function handleSave(formData: any) {
   try {
     if (editingProject.value) {
-      // Update existing project
       await projectService.update(editingProject.value.id, formData);
     } else {
-      // Create new project
       await projectService.create(formData);
     }
     closeModal();
@@ -163,7 +160,7 @@ async function addTask(projectId: number) {
       priority: 'medium'
     });
     newTaskTitle.value[projectId] = '';
-    await fetchProjects(); // Refresh to show new task
+    await fetchProjects(); 
   } catch (err: any) {
     error.value = 'Failed to add task';
     console.error(err);
@@ -175,7 +172,7 @@ async function toggleTask(task: any, projectId: number) {
     await taskService.update(task.id, {
       completed: !task.attributes.completed
     });
-    await fetchProjects(); // Refresh to update UI
+    await fetchProjects(); 
   } catch (err: any) {
     error.value = 'Failed to update task';
     console.error(err);
@@ -187,7 +184,7 @@ async function deleteTask(taskId: number, projectId: number) {
   
   try {
     await taskService.delete(taskId);
-    await fetchProjects(); // Refresh to remove task
+    await fetchProjects(); 
   } catch (err: any) {
     error.value = 'Failed to delete task';
     console.error(err);
