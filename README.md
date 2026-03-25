@@ -5,3 +5,6 @@
 - **DevOps**: Docker & Docker Compose, Nginx, Multi-container Architecture, Volume Mounting
 - **Environment**: Built on Ubuntu Linux VM to sharpen system administration skills
 - **Functionality**: Full CRUD project manager application
+
+
+demonstration here : https://youtu.be/T4qe2pB1QHw
